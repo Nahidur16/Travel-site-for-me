@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(43, 43, 43);
@@ -25,6 +27,7 @@ img {
 
 .large-hero__text-content {
   position: absolute;
+  padding-top: 60px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -110,7 +113,9 @@ img {
 .wrapper--medium {
   max-width: 976px;
 }
-
+.wrapper--narrow {
+  max-width: 470px;
+}
 .wrapper--b-margin {
   margin-bottom: 1.2rem;
 }
@@ -297,6 +302,10 @@ img {
 section-title--blue {
   color: rgb(0, 60, 128);
 }
+.section-title--less-margin {
+  margin-bottom: 1.3rem;
+  margin-top: 0;
+}
 @media (min-width: 530px) {
   .section-title__icon {
     position: relative;
@@ -401,4 +410,256 @@ section-title--blue {
     margin-bottom: 0;
     margin-right: 1.4rem;
   }
+}
+/* Header*/
+.site-header {
+  padding: 10px 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  transition: background-color 0.5s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -ms-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+}
+.site-header--expand {
+  background-color: rgba(0, 60, 128, 0.493);
+}
+@media (min-width: 800px) {
+  .site-header {
+    background-color: rgba(0, 60, 128, 0.527);
+    position: fixed;
+  }
+  .site-header--dark {
+    background-color: rgba(0, 64, 138, 0.925);
+  }
+}
+@media (min-width: 800px) {
+  .site-header__btn-container {
+    float: right;
+  }
+}
+/* Navigation*/
+.primary-nav--right {
+  margin-top: 10px;
+}
+@media (min-width: 800px) {
+  .primary-nav--right {
+    float: right;
+  }
+}
+.primary-nav--right ul {
+  margin: 0;
+  padding: 0;
+}
+.primary-nav--right ul li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 25px;
+}
+.primary-nav--right ul li:last-child {
+  padding-right: 0;
+}
+@media (min-width: 800px) {
+  .primary-nav--right ul li {
+    display: block;
+    float: left;
+  }
+  .primary-nav--right ul li:last-child {
+    padding-right: 25px;
+  }
+}
+.primary-nav--right li a {
+  color: white;
+  padding: 20px 0;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.primary-nav--right ul li a .is-current-link {
+  color: rgb(255, 163, 59);
+}
+
+.site-header__logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  transform-origin: 50% 0;
+  background-color: rgb(0, 60, 128);
+  padding: 25px 36px;
+  -webkit-transform: translateX(-50%) scale(0.8);
+  -moz-transform: translateX(-50%) scale(0.8);
+  -ms-transform: translateX(-50%) scale(0.8);
+  -o-transform: translateX(-50%) scale(0.8);
+}
+@media (min-width: 800px) {
+  .site-header__logo {
+    left: auto;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+  }
+  .site-header--dark .site-header__logo {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+  }
+}
+.site-header__menu-content {
+  display: block;
+  padding-top: 100px;
+  text-align: center;
+}
+.site-header__menu-content--is-visible {
+  display: block;
+}
+
+.site-header__menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+@media (min-width: 800px) {
+  .site-header__menu-content {
+    display: block;
+    padding-top: 0;
+  }
+  .site-header__menu-icon {
+    display: none;
+  }
+}
+.reveal-item {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+.reveal-item--is-visible {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+/* modal*/
+.modal {
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.979);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.35);
+  -webkit-transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  -o-transform: scale(1.35);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.modal__description {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2;
+}
+.modal__inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: scaleX(1.5);
+  -webkit-transform: scaleX(1.5);
+  -moz-transform: scaleX(1.5);
+  -ms-transform: scaleX(1.5);
+  -o-transform: scaleX(1.5);
+  transform-origin: 100% 0;
+  color: rgba(0, 64, 138, 0.925);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.modal__close:hover {
+  color: rgb(255, 163, 59);
+}
+.modal--is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.social-icons {
+  text-align: center;
+}
+.social-icons__icon {
+  background-color: rgb(255, 163, 59);
+  display: inline-block;
+  margin: 5px;
+  width: 50px;
+  height: 72px;
+  position: relative;
+}
+@media (min-width: 550px) {
+  .social-icons__icon {
+    width: 72px;
+    margin: 0 5px;
+  }
+}
+.social-icons__icon-icon-again {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
